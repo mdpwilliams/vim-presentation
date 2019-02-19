@@ -127,11 +127,24 @@
           </section>
 
           <section>
-            <p>Closing a file</p>
+            <h3>Closing a file</h3>
 
-            <p><pre><code class="bash">vim path/to/file.txt</code></pre></p>
+            <p>While in vim, there are multiple ways to exit:</p>
+
+            <pre><code>:wq</code></pre>
+            <pre><code>:x</code></pre>
+            <pre><code>ZZ</code></pre>
+            <pre><code>:q!</code></pre>
+            <pre><code>:qa</code></pre>
+
             <aside class="notes">
-
+              <ul>
+                <li>Write current file and exit.</li>
+                <li>Exit vim, but write only when changes have been made.</li>
+                <li>Equivalent to <pre><code>:x</code></pre>. This is a keypress.</li>
+                <li>Exit Vim without saving currently opened file.</li>
+                <li>Exit all open files in current Vim session.</li>
+              </ul>
             </aside>
           </section>
         </section>
