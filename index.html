@@ -27,11 +27,11 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          Learning to Hotkeys with vim
+          <h1>Learning to Love Hotkeys with vim</h1>
         </section>
 
         <section>
-          <section>The Art of Learning</section>
+          <section><h2>The Art of Learning</h2></section>
           <section>
             <h2>Day 1, Hour 0</h2>
 
@@ -99,6 +99,21 @@
         </section>
 
         <section>
+          <h2>Things I'm Not Going to Cover</h2>
+
+          <ul>
+            <li>File management with netwr</li>
+            <li>vim configuration</li>
+            <li>Registers</li>
+            <li>Code Folding</li>
+            <li>leader keys</li>
+            <li>tabs and different buffers</li>
+          </ul>
+
+          <aside class="notes"></aside>
+        </section>
+
+        <section>
           <section>
             <h2>Opening/Closing Files</h2>
 
@@ -111,19 +126,10 @@
             <p>To open a file, using the terminal you need a command like:</p>
 
             <p><pre><code class="bash">vim path/to/file.txt</code></pre></p>
-
-            <aside class="notes">
-              If vim doesn't find a file in that path, or finds a directory at the end of that, it will open the whole directory into the
-            </aside>
           </section>
 
           <section>
-            <p>To open a file, using the terminal you need a command like:</p>
-
-            <p><pre><code class="bash">vim path/to/file.txt</code></pre></p>
-            <aside class="notes">
-
-            </aside>
+            <blockquote>Exiting vim is the greatest escape room.</blockquote>
           </section>
 
           <section>
@@ -131,13 +137,14 @@
 
             <p>While in vim, there are multiple ways to exit:</p>
 
-            <pre><code>:wq</code></pre>
-            <pre><code>:x</code></pre>
-            <pre><code>ZZ</code></pre>
-            <pre><code>:q!</code></pre>
-            <pre><code>:qa</code></pre>
+            <pre class="fragment"><code>:wq</code></pre>
+            <pre class="fragment"><code>:x</code></pre>
+            <pre class="fragment"><code>ZZ</code></pre>
+            <pre class="fragment"><code>:q!</code></pre>
+            <pre class="fragment"><code>:qa</code></pre>
 
             <aside class="notes">
+              <p>Most of these are entered in command mode. The colon signifies that you are entering a Command Mode command.</p>
               <ul>
                 <li>Write current file and exit.</li>
                 <li>Exit vim, but write only when changes have been made.</li>
@@ -150,41 +157,230 @@
         </section>
 
         <section>
-          Speedround tips
+          <section><h2>Modes</h2></section>
 
-          - remap 'ESC'
-          <aside class="notes">
+          <section>
+            <p>There are 5 modes in vim</p>
 
-          </aside>
+            <ul>
+              <li>Normal Mode</li>
+              <li>Insert Mode</li>
+              <li>Command Mode</li>
+              <li>Visual Mode</li>
+              <li>Insert Normal Mode</li>
+            </ul>
+
+            <aside class="notes">
+              <p>There are a couple other modes like visual-block mode, replace mode</p>.
+
+              <p>Realistically, I would only be concerned with the first four to get the most out of your vim learning</p>.
+            </aside>
+          </section>
+
+          <section>
+            <h3>Normal Mode</h3>
+
+            <p>This is the mode entered in by default.</p>
+
+            <p>The keyboard is mapped to an assortment of different commands that allow you to navigation and manipulate text.</p>
+
+            <aside class="notes">
+              <p>The reason people struggle to learn vim is that the editor doesn't naturally default to text editting by default.</p>
+
+              <p>You should always be trying to get back to this mode.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Insert Mode</h3>
+
+            <p>This is intended for "inserting" text into the document.</p>
+
+            <aside class="notes">
+              <p>Does what it says on the tin. Your keyboard should function as expected with the exception of a couple commands</p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Visual Mode</h3>
+
+            <p>For navigation and text manipulation.</p>
+            <p>Entering this mode allows you to move around like within normal mode, but movement extends a higlighted area to target text.</p>
+          </section>
+
+          <section>
+            <h3>Command Mode</h3>
+
+            <p>Meant for running Ex commands, searches, or filter commands.</p>
+
+            <p>An Ex command usually begins: <pre><code>:{command}</code></pre></p>
+
+            <p>For example, exiting vim is an Ex command: <pre><code>:q</code></pre></p>
+          </section>
         </section>
 
         <section>
-          Modes
-          <aside class="notes">
+          <section>
+            <h2>Navigation</h2>
 
-          </aside>
+            <aside class="notes">
+              vim's ability to put code navigation on the keyboard, in easy to reach places is what helps you improve your speed.
+            </aside>
+          </section>
+
+          <section>
+            <h3>Basic Movement</h3>
+
+            <p>Up, down, left and right are just off the home row.</p>
+
+            <ul>
+              <li>
+                <pre><code>h</code></pre> left
+              </li>
+              <li>
+                <pre><code>j</code></pre> down
+              </li>
+              <li>
+                <pre><code>k</code></pre> up
+              </li>
+              <li>
+                <pre><code>l</code></pre> right
+              </li>
+            </ul>
+
+            <p class="fragment">You <strong>can</strong> use the arrow keys, but I highly suggest against this.</p>
+          </section>
+
+          <section>
+            <h3>Word Movement</h3>
+
+            <p>Instead of moving on a character basis, moving by word is far faster and far more accurate.</p>
+
+            <ul>
+              <li>
+                <pre><code>w</code></pre> start of the next <strong>w</strong>ord
+              </li>
+              <li>
+                <pre><code>W</code></pre> start of the next <strong>W</strong>ORD
+              </li>
+              <li>
+                <pre><code>e</code></pre> <strong>e</strong>nd of the next word
+              </li>
+              <li>
+                <pre><code>E</code></pre> <strong>e</strong>nd of the next WORD
+              </li>
+              <li>
+                <pre><code>b</code></pre> Go to the word <strong>b</strong>efore
+              </li>
+              <li>
+                <pre><code>B</code></pre> Go to the WORD <strong>b</strong>efore
+              </li>
+            </ul>
+
+            <p class="fragment">Difference between word and WORD is what are breaking characters.</p>
+
+            <aside class="notes">
+              <p>Breaking characters are things like brackets, parantheses, punctuation</p>
+
+              <p>For WORDS, it ignores breaking characters and uses strictly whitespace.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Scrolling</h3>
+
+            <p>When working with larger files, it will be easier to move through the file in a page-by-page manner</p>
+
+            <ul>
+              <li>
+                <pre><code>ctrl-d</code></pre>, scroll <strong>d</strong>own half page
+              </li>
+              <li>
+                <pre><code>ctrl-u</code></pre>, scroll <strong>u</strong>p half page
+              </li>
+              <li>
+                <pre><code>ctrl-f</code></pre>, scroll down <strong>f</strong>ull page (or <strong>f</strong>orwards)
+              </li>
+              <li>
+                <pre><code>ctrl-b</code></pre>, scroll up full page (to <strong>b</strong>eginning, or <strong>b</strong>ackwards)
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Jumping</h3>
+
+            <p>vim also give you the ability to jump through huge sections of code, or onto specific lines.</p>
+
+            <ul>
+              <li>
+                <pre><code>gg</code></pre> Goes to the first line of the file
+              </li>
+              <li>
+                <pre><code>G</code></pre> Goes to the bottom line of the file
+              </li>
+              <li>
+                <pre><code>{ }</code></pre> Goes the beginning or ending of the paragraph
+              </li>
+              <li>
+                <pre><code>%</code></pre> Go to the matching ( ), [ ], { }
+              </li>
+              <li>
+                <pre><code>50%</code></pre> Go to the line at the 50% mark of the file
+              </li>
+              <li>
+                <pre><code>:NUM</code></pre> Go to the specific line number.
+              </li>
+            </ul>
+          </section>
         </section>
 
         <section>
-          Navigation
+          <section>
+            <h2>Search</h2>
+          </section>
 
-          - directional elements (h, j, k, l)
-          - movement by words (or word-breaking characters)
-          - scrolling
-          - jumping
-          <aside class="notes">
+          <section>
+            <h3>Basic Search</h3>
 
-          </aside>
-        </section>
+            <p>You can search forward by <pre><code>/</code></pre> and entering your search pattern.</p>
 
-        <section>
-          Search
+            <p>Like, <pre><code>/code</code></pre> will search for all matches of code in your file.</p>
+          </section>
 
-          - basic search
-          - search current word
-          <aside class="notes">
+          <section>
+            <p>Clicking enter will search for that search pattern and highlight all matches, in addition to jumping you to the next one.</p>
 
-          </aside>
+            <p>Afterwards <pre><code>n</code></pre> and <pre><code>N</code></pre> will move you through the search results forward and backwards, respectively</p>
+          </section>
+
+          <section>
+            <h3>Some notes about search...</h3>
+
+            <p>This is a pattern, you can use regex to make a more complex search criteria</p>
+
+            <p>You can also search in reverse using '?' this reverses 'n' and 'N'</p>
+
+            <aside class="notes">
+              <p>Complex patterns, like adding ORs or wild characters</p>
+
+              <p>Super advanced tip: vim remembers where you were when you wanted to first searched, after you completed your search if you press 'ctrl-o' it will jump back to your previous position. (You can use 'ctrl-i' to jump forward in positions)</p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Searching by Word</h3>
+
+            <p>If you want to find the word under the cursor, you can use</p>
+
+            <pre><code>*</code></pre> or <pre><code>#</code></pre>
+
+            <p>These work both forwards and backwards, respectively</p>
+
+            <aside class="notes">
+              <p>Please note that these are word specific, and not WORD; so they break on breaking characters like brackets, commas, etc.</p>
+            </aside>
+          </section>
         </section>
 
         <section>
@@ -243,7 +439,30 @@
         </section>
 
         <section>
-          Examples
+          Speedround tips
+
+          - remap 'ESC'
+          <aside class="notes">
+
+          </aside>
+        </section>
+
+        <section>
+          <h3>Example time!</h3>
+          <p>We are going to try and make these following changes to the example code snippets</p>
+
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
 
           <aside class="notes">
 
