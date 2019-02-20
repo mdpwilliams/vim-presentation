@@ -105,12 +105,27 @@
             <li>File management with netwr</li>
             <li>vim configuration</li>
             <li>Registers</li>
+            <li>Macros</li>
             <li>Code Folding</li>
             <li>leader keys</li>
             <li>tabs and different buffers</li>
           </ul>
 
           <aside class="notes"></aside>
+        </section>
+
+        <section>
+          <h2>vim</h2>
+
+          <p>When you are writing code in the editor, how do you spend time in the editor?</p>
+
+          <aside class="notes">
+            <p>I don't know about you're work flow specifically, but I spend more time searching and researching a solution rather than implementing it.</p>
+
+            <p>Writing code is not like writing creatively, it is more akin to tuning an engine than reading a book.</p>
+
+            <p>vim intends to switch the priority from entering code, to navigating and modifying code to increase speed and efficiency.</p>
+          </aside>
         </section>
 
         <section>
@@ -196,6 +211,8 @@
 
             <p>This is intended for "inserting" text into the document.</p>
 
+            <p>From normal mode, you can jump in at the cursor using 'a' or 'i', to "append" text after or "insert" text before.</p>
+
             <aside class="notes">
               <p>Does what it says on the tin. Your keyboard should function as expected with the exception of a couple commands</p>
             </aside>
@@ -205,7 +222,7 @@
             <h3>Visual Mode</h3>
 
             <p>For navigation and text manipulation.</p>
-            <p>Entering this mode allows you to move around like within normal mode, but movement extends a higlighted area to target text.</p>
+            <p>Entering this mode allows you to move around like within normal mode, but movement extends a highlighted area to target text.</p>
           </section>
 
           <section>
@@ -235,16 +252,16 @@
 
             <ul>
               <li>
-                <pre><code>h</code></pre> left
+                'h', left
               </li>
               <li>
-                <pre><code>j</code></pre> down
+                'j', down
               </li>
               <li>
-                <pre><code>k</code></pre> up
+                'k', up
               </li>
               <li>
-                <pre><code>l</code></pre> right
+                'l', right
               </li>
             </ul>
 
@@ -258,22 +275,22 @@
 
             <ul>
               <li>
-                <pre><code>w</code></pre> start of the next <strong>w</strong>ord
+                'w', start of the next <strong>w</strong>ord
               </li>
               <li>
-                <pre><code>W</code></pre> start of the next <strong>W</strong>ORD
+                'W', start of the next <strong>W</strong>ORD
               </li>
               <li>
-                <pre><code>e</code></pre> <strong>e</strong>nd of the next word
+                'e', <strong>e</strong>nd of the next word
               </li>
               <li>
-                <pre><code>E</code></pre> <strong>e</strong>nd of the next WORD
+                'E', <strong>e</strong>nd of the next WORD
               </li>
               <li>
-                <pre><code>b</code></pre> Go to the word <strong>b</strong>efore
+                'b', Go to the word <strong>b</strong>efore
               </li>
               <li>
-                <pre><code>B</code></pre> Go to the WORD <strong>b</strong>efore
+                'B', Go to the WORD <strong>b</strong>efore
               </li>
             </ul>
 
@@ -293,16 +310,16 @@
 
             <ul>
               <li>
-                <pre><code>ctrl-d</code></pre>, scroll <strong>d</strong>own half page
+                'ctrl-d', scroll <strong>d</strong>own half page
               </li>
               <li>
-                <pre><code>ctrl-u</code></pre>, scroll <strong>u</strong>p half page
+                'ctrl-u', scroll <strong>u</strong>p half page
               </li>
               <li>
-                <pre><code>ctrl-f</code></pre>, scroll down <strong>f</strong>ull page (or <strong>f</strong>orwards)
+                'ctrl-f', scroll down <strong>f</strong>ull page (or <strong>f</strong>orwards)
               </li>
               <li>
-                <pre><code>ctrl-b</code></pre>, scroll up full page (to <strong>b</strong>eginning, or <strong>b</strong>ackwards)
+                'ctrl-b', scroll up full page (to <strong>b</strong>eginning, or <strong>b</strong>ackwards)
               </li>
             </ul>
           </section>
@@ -314,22 +331,22 @@
 
             <ul>
               <li>
-                <pre><code>gg</code></pre> Goes to the first line of the file
+                'gg' Goes to the first line of the file
               </li>
               <li>
-                <pre><code>G</code></pre> Goes to the bottom line of the file
+                'G' Goes to the bottom line of the file
               </li>
               <li>
-                <pre><code>{ }</code></pre> Goes the beginning or ending of the paragraph
+                '{ }' Goes the beginning or ending of the paragraph
               </li>
               <li>
-                <pre><code>%</code></pre> Go to the matching ( ), [ ], { }
+                '%' Go to the matching ( ), [ ], { }
               </li>
               <li>
-                <pre><code>50%</code></pre> Go to the line at the 50% mark of the file
+                '50%' Go to the line at the 50% mark of the file
               </li>
               <li>
-                <pre><code>:NUM</code></pre> Go to the specific line number.
+                ':NUM' Go to the specific line number.
               </li>
             </ul>
           </section>
@@ -343,15 +360,15 @@
           <section>
             <h3>Basic Search</h3>
 
-            <p>You can search forward by <pre><code>/</code></pre> and entering your search pattern.</p>
+            <p>You can search forward by '/' and entering your search pattern.</p>
 
-            <p>Like, <pre><code>/code</code></pre> will search for all matches of code in your file.</p>
+            <p>Like, '/code' will search for all matches of code in your file.</p>
           </section>
 
           <section>
             <p>Clicking enter will search for that search pattern and highlight all matches, in addition to jumping you to the next one.</p>
 
-            <p>Afterwards <pre><code>n</code></pre> and <pre><code>N</code></pre> will move you through the search results forward and backwards, respectively</p>
+            <p>Afterwards 'n' and 'N' will move you through the search results forward and backwards, respectively</p>
           </section>
 
           <section>
@@ -373,7 +390,7 @@
 
             <p>If you want to find the word under the cursor, you can use</p>
 
-            <pre><code>*</code></pre> or <pre><code>#</code></pre>
+            <p>'*' or '#'</p>
 
             <p>These work both forwards and backwards, respectively</p>
 
@@ -384,67 +401,204 @@
         </section>
 
         <section>
-          Commands and Verbs
+          <section>
+            <h2>Undo and Redo</h2>
+          </section>
 
-          - undo and redo
-            - time frames (?)
-          - powerless verbs
-          - powerful verbs
-          <aside class="notes">
+          <section>
+            <p>Before we get into making sweeping changes, we're quickly going to talk about undoing and redoing changes.</p>
 
-          </aside>
+            <ul>
+              <li>'u', is undo</li>
+              <li>'ctrl-r', is redo</li>
+            </ul>
+
+            <aside class="notes">
+              <p>Like verbs that we'll learn about later, this can take numerical modifiers.</p>
+            </aside>
+          </section>
+
+          <section>
+            <p>Vim also has commands that let you rewind changes over time.</p>
+
+            <p>Let's say you hypothetically let your corgi type on your computer for ten minutes, destroying your presentation!</p>
+
+            <pre><code>:earlier 10m</code></pre>
+
+            <p>Or let's say the same Corgi solved a bug you just rewinded!</p>
+
+            <pre><code>:later 10m</code></pre>
+
+            <aside class="notes">
+              <p>I'll be honest, I haven't had the opportunity to use this a ton. I can see how it would be helpful, just haven't had the chance.</p>
+            </aside>
+          </section>
         </section>
 
         <section>
-          Nouns
+          <section>
+            <h2>Verbs</h2>
+          </section>
 
-          - modifiers
-          - objects
-          <aside class="notes">
+          <section>
+            <h3>Powerless Verbs</h3>
 
-          </aside>
+            <p>Actions that do not take a modifer, and run a quick action</p>
+
+            <ul>
+              <li>'x', deletes the character underneath the cursor to the right</li>
+              <li>'X', deletes the character underneath the cursor to the left</li>
+              <li>'r', enters replace mode, replace character under cursor with a new character</li>
+              <li>'s', delete the character under the cursor and enter Insert mode</li>
+            </ul>
+
+            <aside class="notes">
+              <p>Quick actions, used for quick editting, note that the deletes are stored in the clipboard, so let's say you write two letters in the incorrect order you could use 'xp' to correct them.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Powerful Verbs</h3>
+
+            <p>These actions are more powerful, usually taking a modifier that allows them to target sections of code.</p>
+
+            <ul>
+              <li>'y', yank (copy)</li>
+              <li>'c', change</li>
+              <li>'d', delete (cut)</li>
+              <li>'v', visually-select</li>
+            </ul>
+            <aside class="notes">
+              <p>Mitch? Why did you add 'v'! I added that because it works with modifiers and then used with verbs. It's kind of like an adverb!</p>
+
+              <p>Also interesting! Pressing the command again after entering it will default to running the command on the current line you're on.</p>
+            </aside>
+          </section>
         </section>
 
         <section>
-          Customizing
-          <aside class="notes">
+          <section><h2>Modifiers and Nouns</h2></section>
 
-          </aside>
+          <section>
+            <h3>Modifiers</h3>
+            <p>Used right before nouns, modifiers influence how the noun is going to be effected.</p>
+
+            <ul>
+              <li>'i', for inner (or inside)</li>
+              <li>'a', for around (or all)</li>
+              <li>NUM, a number</li>
+              <li>'t, T', search for a character and stop before (until)</li>
+              <li>'f, F', search for a character and the searched character (find)</li>
+              <li>'/', next searched pattern</li>
+            </ul>
+
+            <aside class="notes">
+              <p>These are a little tough without context but these are helping you restrict and focus the effects of the powerful verbs</p>
+
+              <p>not that the 'T' and 'F' work in the reverse direction.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Nouns</h3>
+
+            <p>Just like English, nouns are objects that you apply effects to.</p>
+
+            <ul>
+              <li>'w,W', start of next word or WORD</li>
+              <li>'e,E', end of word or WORD</li>
+              <li>'b,B', start of previous word or WORD</li>
+              <li>'s', sentence</li>
+              <li>'p', paragraph</li>
+              <li>'t', tag (with respect to HTML)</li>
+              <li>'b', block (with respect to programming)</li>
+              <li>'h j k l', for a direction</li>
+              <li>'$', to the end of the line</li>
+              <li>'^', to the beginning of the line</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>All Together Now!</h3>
+
+            <p>Using powerful verbs in tandem with modifiers and nouns you can create commands that quickly structure changes you want to make.</p>
+
+            <pre><code>console.log('Data received');</code></pre>
+
+            <p>With the example code above, if I wanted to change all the code within the quotes I could run "ci'"</p>
+          </section>
+
+          <section>
+            <h3>Repeat</h3>
+
+            <p>Need to repeat a command multiple times?</p>
+
+            <p>Enter the dot command!</p>
+
+            <p>Need to delete 4 lines, you can enter it a number of ways!</p>
+
+            <aside class="notes">
+              <ul>
+                <li>'dd 3.'</li>
+                <li>'4dd'</li>
+                <li>'d3j</li>
+              </ul>
+            </aside>
+          </section>
         </section>
 
         <section>
-          Search and Replace
+          <section>
+            <h2>Search and Replace</h2>
+          </section>
 
-          - ranges
-          - regex substitutions
-          - interactive mode
-          <aside class="notes">
+          <section>
+            <p>This is where we start putting it all together.</p>
 
-          </aside>
+            <p>We know that the command for substitution is 's'.</p>
+
+            <pre><code>:[range] s/[pattern]/[string]/[flags] [count]</code></pre>
+
+            <p>We already know most of these. Pattern, string, count.</p>
+          </section>
+
+          <section>
+            <h3>Ranges</h3>
+            <p>For most commands, the target is the line.</p>
+            <p>When we apply a command we can modify the range of its effect.</p>
+
+            <ul>
+              <li>NUM, apply to a specific line</li>
+              <li>1, first line</li>
+              <li>$, last line</li>
+              <li>%, all lines</li>
+              <li>., current line</li>
+              <li>50,$ , line fifty to the end of the file</li>
+              <li>&lt;, &gt; , use the visual mode selection</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Flags</h3>
+
+            <ul>
+              <li>g, change will be performed over all occurrences</li>
+              <li>i, pattern is case insensitive, 'home' is the same as 'HOME'</li>
+              <li>c, runs interactively</li>
+            </ul>
+
+            <aside class="notes">
+              Interactive search and replace runs through the matches and let's you choose whether the replacement takes place or not.
+            </aside>
+          </section>
         </section>
 
         <section>
-          Global Commands
-          <aside class="notes">
+          <h2>Speedround tips</h2>
 
-          </aside>
-        </section>
+          <p>I highly recommend that you remap 'Caps Lock' to 'ESC'.</p>
 
-        <section>
-          Macros
-
-          <aside class="notes">
-
-          </aside>
-        </section>
-
-        <section>
-          Speedround tips
-
-          - remap 'ESC'
-          <aside class="notes">
-
-          </aside>
+          <p>Or if you're feeling fancy, try and remap 'jj' to 'ESC'!</p>
         </section>
 
         <section>
@@ -452,21 +606,10 @@
           <p>We are going to try and make these following changes to the example code snippets</p>
 
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Navigate to the end of the file.</li>
+            <li>Change 'char' to 'character' across the whole file</li>
+            <li>Change the string on the last line of the file</li>
           </ul>
-
-          <aside class="notes">
-
-          </aside>
         </section>
       </div>
     </div>
